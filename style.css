@@ -46,8 +46,8 @@ li{
     color: #6030b1;
 }
 
-section:nth-child(even){
-    background-color: #f8f8f8;
+section:nth-child(even){  /* Selecting the even sections */
+    background-color: #f8f8f8; 
 }
 
 .container{
@@ -104,7 +104,7 @@ nav{
 /* ABOUT ME */
 
 #about-me{
-    min-height: 100vh;
+    min-height: 100vh; /* To make the section take the whole height of the screen */
     display: flex;
     flex-direction: column;
 }
@@ -125,7 +125,7 @@ nav{
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: hidden; /* To hide the overflow of the image */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     margin-bottom: 28px;
 }
@@ -156,8 +156,7 @@ nav{
 
 .about-me__img--container{
     display: flex;
-    flex: 1;
-    
+    flex: 1;           /* To make the image take the whole width of the container */
     align-items: center;
 }
 
@@ -166,4 +165,49 @@ nav{
 }
 
 /* TECH STACK */
+.language{
+    width: 25%;
+    display: flex;
+    justify-content: center; 
+    position: relative; /* To position the "language__name" relative to the "language" */
+}
+.language__img{
+    width: 100%;
+    max-width: 100px;
+    transition: all 0.3s;
+}
 
+.language:hover .language__img { /* As we hopver over the "language", target the "language__img" */
+    filter: brightness(1.2); 
+    opacity: 1.1;
+    transform: scale(1.1);
+}
+
+.language__img--wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.language__list{
+    display: flex;
+    flex-wrap: wrap; /* If the elements are more than the width of the container, wrap them. look the ".language" it has width 25% */
+    justify-content: center;
+    width: 100%;
+}
+
+.language__name{
+    position: absolute; /* Position the "language__name" relative to the "language" */
+    bottom: 0;        /* Position the "language__name" at the bottom of the "language" */
+    transform: scale(0); /* Initially the scale is 0 */
+    transition: all 300ms;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.language:hover .language__name{
+    transform: scale(1); /* When we hover over the "language", scale the "language__name" */
+    opacity: 1;
+    margin-bottom: -5px; /* To make the "language__name" go down a little bit */
+}
