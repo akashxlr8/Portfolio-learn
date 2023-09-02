@@ -14,15 +14,12 @@ h1, h2, h3, h4, h5, h6, span{
 }
 
 h1{
-    font-size: 32px;
+    font-size: 36px;
 }
+
 p{
     line-height: 1.5;
     font-size: 16px;
-}
-
-.text--purple{
-    color: #6030b1;
 }
 
 li{
@@ -40,7 +37,25 @@ li{
 .row{
     width: 100%;
     max-width: 800px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    padding: 0 12px; 
+}
+
+
+.text--purple{
+    color: #6030b1;
+}
+
+section:nth-child(even){
+    background-color: #f8f8f8;
+}
+
+.container{
+    padding: 50px 0;
+}
+
+.section__title{
+    margin-bottom: 28px;
 }
 
 /* NAV BAR */
@@ -53,6 +68,7 @@ nav{
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 .nav__link--list{
@@ -81,16 +97,21 @@ nav{
 .personal__logo{
     font-weight: bold ;
     font-size: 24px;
-    margin: 0 24px;
+    margin: 0 12px;
     color: #6030b1;
 }
 
 /* ABOUT ME */
 
 #about-me{
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
+.about-me__info{
+    display: flex;
+    flex-direction: column;
+}
 .about-me__info--container{
     display: flex;
     flex-direction: column;
@@ -125,3 +146,24 @@ nav{
     font-size: 20px;
     margin-bottom: 28px;
 }
+
+.about-me__link--anchor{
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+.about-me__img--container{
+    display: flex;
+    flex: 1;
+    
+    align-items: center;
+}
+
+.about-me__img{
+    width: 100%;
+}
+
+/* TECH STACK */
+
