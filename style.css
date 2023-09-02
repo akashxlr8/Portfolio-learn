@@ -211,3 +211,34 @@ nav{
     opacity: 1;
     margin-bottom: -5px; /* To make the "language__name" go down a little bit */
 }
+
+/* PROJECTS */
+
+.project__img{
+    width: 100%;
+}
+
+.project__wrapper{
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; /* To make the "project__img" fit into the "project__wrapper" */
+    position: relative;
+}
+
+.project__wrapper:before{ /* To make the "project__wrapper" have an overlay already*/
+    content: "";
+    position: absolute; /* To position the overlay relative to the "project__wrapper" and to not affect other stuff on the page */
+    top: 0;           /* Position the overlay at the top of the "project__wrapper" */
+    left: 0;
+    height: 100%;    /* Make the overlay take the whole height of the "project__wrapper" i.e. its parent */
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;     /* Initially the opacity is 0 */
+    transition: opacity 0.3s ease; /* When we hover over the "project", make the overlay opacity transform slowly*/
+}
+
+.project:hover .project__wrapper:before{
+    opacity: 0.7; /* When we hover over the "project", make the overlay visible */
+
+}
