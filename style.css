@@ -34,13 +34,12 @@ li{
     display: flex;
 }
 
-.row{
+.row{ /* To make content have a boundary and squeezed in the center, improves readability*/
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 12px; 
 }
-
 
 .text--purple{
     color: #6030b1;
@@ -213,32 +212,87 @@ nav{
 }
 
 /* PROJECTS */
+.project{
+    margin-bottom: 135px; 
+}
+
+.project:last-child{          /* To remove the margin-bottom of the last "project" */
+    margin-bottom: 40px;
+}
 
 .project__img{
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 .project__wrapper{
     box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
     border-radius: 12px;
     overflow: hidden;
-    display: flex; /* To make the "project__img" fit into the "project__wrapper" */
+    display: flex;      /* To make the "project__img" fit into the "project__wrapper" */
     position: relative;
 }
 
-.project__wrapper:before{ /* To make the "project__wrapper" have an overlay already*/
+.project__wrapper:before{       /* To make the "project__wrapper" have an overlay already*/
     content: "";
-    position: absolute; /* To position the overlay relative to the "project__wrapper" and to not affect other stuff on the page */
-    top: 0;           /* Position the overlay at the top of the "project__wrapper" */
+    position: absolute;         /* To position the overlay relative to the "project__wrapper" and to not affect other stuff on the page */
+    top: 0;                 /* Position the overlay at the top of the "project__wrapper" */
     left: 0;
-    height: 100%;    /* Make the overlay take the whole height of the "project__wrapper" i.e. its parent */
+    height: 100%;           /* Make the overlay take the whole height of the "project__wrapper" i.e. its parent */
     width: 100%;
     background-color: #1c1d25;
-    opacity: 0;     /* Initially the opacity is 0 */
-    transition: opacity 0.3s ease; /* When we hover over the "project", make the overlay opacity transform slowly*/
+    opacity: 0;             /* Initially the opacity is 0 */
+    transition: opacity 0.3s ease;      /* When we hover over the "project", make the overlay opacity transform slowly*/
+    z-index: 2;            /* To make the overlay appear above the image */
 }
 
 .project:hover .project__wrapper:before{
-    opacity: 0.7; /* When we hover over the "project", make the overlay visible */
-
+    opacity: 0.7;       /* When we hover over the "project", make the overlay visible */
 }
+
+.project:hover .project__img{      /* When we hover over the "project", make the image scale and blur */
+    transform: scale(1.07);
+    filter: blur(2px);
+}
+.project:hover .project__description{
+    opacity: 1;                                     /* When we hover over the "project", make the "project__description" visible */
+    transform: translateY(-50%);            /* When we hover over the "project", make the "project__description" appear from the bottom */
+}
+
+.project__list{
+    padding: 40px;
+}
+
+.project__description{
+    position: absolute;             /* To position the "project__description" relative to the "project__wrapper" */
+    top: 50%;                       /* Position the "project__description" at the mid of the "project__wrapper" */
+    left: 90px;                     /* Position the "project__description" at a distance from left of the "project__wrapper" */
+    right: 70px;                    /* Position the "project__description" at a distance from right of the "project__wrapper" */
+    transform: translateY(100%);    /* To make the "project__description" HIDDEN AT FIRST */
+    max-width: 550px;       
+    z-index: 3;                     /* To make the "project__description" appear above the overlay */
+    opacity: 0;         
+    transition: transform 450ms , opacity 0.3s ;                
+}
+
+.project__description--title{
+    font-size: 40px;
+}
+
+.project__description--para{
+    margin: 16px 0;
+}
+
+.project__description--link{
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.project__description--title,
+.project__description--subtitle,
+.project__description--para,
+.project__description--link{
+    text-align: left;
+    color: #fff;
+}   
