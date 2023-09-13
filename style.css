@@ -31,6 +31,14 @@ a{
     position: relative;
 }
 
+i{
+    transition: opacity 0.3s ease;
+}
+
+i:hover{
+    opacity: 0.8;
+}
+
 .link__hover-effect:after{
     content: "";
     position: absolute;
