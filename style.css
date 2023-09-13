@@ -71,7 +71,7 @@ li{
 }
 
 .text--purple{
-    color: #6030b1;
+    color: #5d3eff;
 }
 
 section:nth-child(even){  /* Selecting the even sections */
@@ -378,3 +378,69 @@ footer{
     transform: translateX(60px);
     opacity: 1;
 }
+
+@media (max-width: 768px){
+    nav{
+        height: 68px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .about-me__info--para{
+        font-size: 18px;
+    }
+
+    .language{
+        width: calc(100% / 3);
+    }
+
+    .project__description--para{
+        font-size: 12px;
+    }
+
+    .project__description{
+        left: 50px;
+    }
+}
+
+/* FOr small phones */
+@media screen and (max-width: 480px){
+    .nav__link:not(:last-child){
+        display: none;
+    }
+
+    .about-me__info--para{
+        font-size: 16px;
+    }
+
+    .language{
+        width: 50%;
+    }
+
+    .project__description{
+        left: 0;
+        width: 100%;
+    }
+    .project__description--title{
+        font-size: 28px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .project__description--para{
+        display: none;
+    }
+
+    .project__description--links{
+        display: flex;
+        justify-content: center;
+    }
+
+    .project__description--subtitle{
+        text-align: center;
+        margin: 12px 0;
+    }
+}
+    
